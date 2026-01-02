@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>한화인 : 내일의 우주를 짓다</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+            rel="stylesheet"
+        />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;700;900&display=swap');
+
+            body {
+                font-family: 'Pretendard', sans-serif;
+                background-color: #05070a;
+            }
+
+            /* 웅장한 배경: 우주와 지평선을 상징하는 그래디언트 */
+            .cinematic-hero {
+                background: linear-gradient(to bottom, rgba(5, 7, 10, 0.4), #05070a),
+                    url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2000');
+                background-size: cover;
+                background-position: center;
+            }
+
+            /* 한화 오렌지 빛 (Glow) 효과 */
+            .orange-glow {
+                box-shadow: 0 0 30px rgba(243, 115, 33, 0.3);
+                transition: all 0.5s ease;
+            }
+            .orange-glow:hover {
+                box-shadow: 0 0 50px rgba(243, 115, 33, 0.6);
+                transform: translateY(-5px);
+            }
+
+            /* 텍스트 그래디언트 */
+            .text-hope {
+                background: linear-gradient(120deg, #ffffff 30%, #f37321 100%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+        </style>
+    </head>
+    <body class="text-white">
+        <nav
+            class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm border-b border-white/10"
+        >
+            <div class="text-2xl font-black tracking-tighter text-[#F37321]">
+                HANWHA<span class="text-white font-light">IN</span>
+            </div>
+            <div class="hidden md:flex gap-10 text-sm font-light tracking-widest uppercase">
+                <a href="#" class="hover:text-[#F37321] transition">Careers</a>
+                <a href="#" class="hover:text-[#F37321] transition">Our Tech</a>
+                <a href="#" class="hover:text-[#F37321] transition">Culture</a>
+                <a href="#" class="hover:text-[#F37321] transition">Apply</a>
+            </div>
+            <button
+                class="border border-white/30 px-6 py-2 rounded-full text-xs hover:bg-white hover:text-black transition"
+            >
+                Login
+            </button>
+        </nav>
+
+        <section
+            class="cinematic-hero min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden"
+        >
+            <div
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F37321]/10 rounded-full blur-[120px] -z-10"
+            ></div>
+
+            <div class="text-center animate__animated animate__fadeInUp">
+                <p class="text-orange-400 tracking-[0.5em] text-sm mb-6 font-bold">
+                    DISCOVER YOUR FUTURE
+                </p>
+                <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight text-hope">
+                    우리는 내일을<br />먼저 만납니다.
+                </h1>
+                <p
+                    class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed mb-12"
+                >
+                    우주 항공부터 에너지 솔루션까지, <br />
+                    한화와 함께 세상의 지도를 바꿀 혁신가를 기다립니다.
+                </p>
+
+                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                    <button
+                        class="bg-[#F37321] text-white px-10 py-5 rounded-full font-bold text-lg orange-glow"
+                    >
+                        지금 지원하기
+                    </button>
+                    <button
+                        class="bg-white/5 backdrop-blur-lg border border-white/10 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition"
+                    >
+                        비전 영상 보기
+                    </button>
+                </div>
+            </div>
+
+            <div class="absolute bottom-10 animate-bounce text-gray-500">
+                <span class="text-[10px] tracking-widest uppercase">Scroll Down</span>
+                <div
+                    class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent mx-auto mt-2"
+                ></div>
+            </div>
+        </section>
+
+        <section class="py-32 px-6 max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                <div class="animate__animated animate__fadeInLeft">
+                    <h2 class="text-4xl font-bold mb-8 leading-snug">
+                        지구에서 우주까지,<br />
+                        한화의 영역은 무한합니다.
+                    </h2>
+                    <p class="text-gray-400 mb-10 leading-loose">
+                        단순한 채용을 넘어, 인류의 지속 가능한 미래를 위해 고민합니다. <br />
+                        한화는 당신의 상상이 기술이 되고, 기술이 희망이 되는 곳입니다.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-6 border-l-2 border-[#F37321] pl-6 py-2">
+                            <span class="text-2xl font-bold">01</span>
+                            <span class="text-gray-300">누리호의 심장을 만드는 독보적 기술력</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-6 border-l-2 border-gray-700 pl-6 py-2 hover:border-[#F37321] transition"
+                        >
+                            <span class="text-2xl font-bold">02</span>
+                            <span class="text-gray-300">그린 에너지를 통한 탄소 중립의 실현</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative group cursor-pointer animate__animated animate__fadeInRight">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-[#F37321] to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+                    ></div>
+                    <div
+                        class="relative bg-[#0d1117] border border-white/10 rounded-3xl overflow-hidden p-2"
+                    >
+                        <img
+                            src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=1000"
+                            alt="Tech"
+                            class="rounded-2xl opacity-70 group-hover:scale-105 transition duration-500"
+                        />
+                        <div class="p-8">
+                            <h4 class="text-xl font-bold mb-2">Aerospace & Defense</h4>
+                            <p class="text-sm text-gray-500">
+                                함께 우주 시대를 열어갈 엔지니어를 찾습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
