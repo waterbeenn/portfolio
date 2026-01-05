@@ -4,154 +4,543 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>한화인 : 내일의 우주를 짓다</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="reset.css" />
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="icon" href="./assets/favicon.ico" />
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
             rel="stylesheet"
         />
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;400;700;900&display=swap');
-
-            body {
-                font-family: 'Pretendard', sans-serif;
-                background-color: #05070a;
-            }
-
-            /* 웅장한 배경: 우주와 지평선을 상징하는 그래디언트 */
-            .cinematic-hero {
-                background: linear-gradient(to bottom, rgba(5, 7, 10, 0.4), #05070a),
-                    url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2000');
-                background-size: cover;
-                background-position: center;
-            }
-
-            /* 한화 오렌지 빛 (Glow) 효과 */
-            .orange-glow {
-                box-shadow: 0 0 30px rgba(243, 115, 33, 0.3);
-                transition: all 0.5s ease;
-            }
-            .orange-glow:hover {
-                box-shadow: 0 0 50px rgba(243, 115, 33, 0.6);
-                transform: translateY(-5px);
-            }
-
-            /* 텍스트 그래디언트 */
-            .text-hope {
-                background: linear-gradient(120deg, #ffffff 30%, #f37321 100%);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-            }
-        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     </head>
     <body class="text-white">
-        <nav
-            class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm border-b border-white/10"
-        >
-            <div class="text-2xl font-black tracking-tighter text-[#F37321]">
-                HANWHA<span class="text-white font-light">IN</span>
-            </div>
-            <div class="hidden md:flex gap-10 text-sm font-light tracking-widest uppercase">
-                <a href="#" class="hover:text-[#F37321] transition">Careers</a>
-                <a href="#" class="hover:text-[#F37321] transition">Our Tech</a>
-                <a href="#" class="hover:text-[#F37321] transition">Culture</a>
-                <a href="#" class="hover:text-[#F37321] transition">Apply</a>
-            </div>
-            <button
-                class="border border-white/30 px-6 py-2 rounded-full text-xs hover:bg-white hover:text-black transition"
+        <div class="inner">
+            <nav
+                class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm border-b border-white/10"
             >
-                Login
-            </button>
-        </nav>
-
-        <section
-            class="cinematic-hero min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden"
-        >
-            <div
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F37321]/10 rounded-full blur-[120px] -z-10"
-            ></div>
-
-            <div class="text-center animate__animated animate__fadeInUp">
-                <p class="text-orange-400 tracking-[0.5em] text-sm mb-6 font-bold">
-                    DISCOVER YOUR FUTURE
-                </p>
-                <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight text-hope">
-                    우리는 내일을<br />먼저 만납니다.
-                </h1>
-                <p
-                    class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed mb-12"
-                >
-                    우주 항공부터 에너지 솔루션까지, <br />
-                    한화와 함께 세상의 지도를 바꿀 혁신가를 기다립니다.
-                </p>
-
-                <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                    <button
-                        class="bg-[#F37321] text-white px-10 py-5 rounded-full font-bold text-lg orange-glow"
-                    >
-                        지금 지원하기
-                    </button>
-                    <button
-                        class="bg-white/5 backdrop-blur-lg border border-white/10 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition"
-                    >
-                        비전 영상 보기
-                    </button>
+                <div class="text-2xl font-black tracking-tighter text-[#F37321]">
+                    HANWHA<span class="text-white font-light">IN</span>
                 </div>
-            </div>
+                <div class="hidden md:flex gap-10 text-sm font-light tracking-widest uppercase">
+                    <a href="#" class="hover:text-[#F37321] transition">Careers</a>
+                    <a href="#" class="hover:text-[#F37321] transition">Our Tech</a>
+                    <a href="#" class="hover:text-[#F37321] transition">Culture</a>
+                    <a href="#" class="hover:text-[#F37321] transition">Apply</a>
+                </div>
+                <button
+                    class="border border-white/30 px-6 py-2 rounded-full text-xs hover:bg-white hover:text-black transition"
+                >
+                    Login
+                </button>
+            </nav>
 
-            <div class="absolute bottom-10 animate-bounce text-gray-500">
-                <span class="text-[10px] tracking-widest uppercase">Scroll Down</span>
+            <section
+                class="cinematic-hero min-h-screen flex flex-col items-center justify-center px-6 relative overflow-hidden"
+            >
                 <div
-                    class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent mx-auto mt-2"
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#F37321]/10 rounded-full blur-[120px] -z-10"
                 ></div>
-            </div>
-        </section>
 
-        <section class="py-32 px-6 max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-                <div class="animate__animated animate__fadeInLeft">
-                    <h2 class="text-4xl font-bold mb-8 leading-snug">
-                        지구에서 우주까지,<br />
-                        한화의 영역은 무한합니다.
-                    </h2>
-                    <p class="text-gray-400 mb-10 leading-loose">
-                        단순한 채용을 넘어, 인류의 지속 가능한 미래를 위해 고민합니다. <br />
-                        한화는 당신의 상상이 기술이 되고, 기술이 희망이 되는 곳입니다.
+                <div class="text-center animate__animated animate__fadeInUp">
+                    <p class="text-orange-400 tracking-[0.5em] text-sm mb-6 font-bold">
+                        DISCOVER YOUR FUTURE
                     </p>
-                    <div class="space-y-6">
-                        <div class="flex items-center gap-6 border-l-2 border-[#F37321] pl-6 py-2">
-                            <span class="text-2xl font-bold">01</span>
-                            <span class="text-gray-300">누리호의 심장을 만드는 독보적 기술력</span>
-                        </div>
-                        <div
-                            class="flex items-center gap-6 border-l-2 border-gray-700 pl-6 py-2 hover:border-[#F37321] transition"
+                    <h1 class="text-5xl md:text-8xl font-black mb-8 leading-tight text-hope">
+                        우리는 내일을<br />먼저 만납니다.
+                    </h1>
+                    <p
+                        class="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto leading-relaxed mb-12"
+                    >
+                        우주 항공부터 에너지 솔루션까지, <br />
+                        한화와 함께 세상의 지도를 바꿀 혁신가를 기다립니다.
+                    </p>
+
+                    <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                        <button
+                            class="bg-[#F37321] text-white px-10 py-5 rounded-full font-bold text-lg orange-glow"
                         >
-                            <span class="text-2xl font-bold">02</span>
-                            <span class="text-gray-300">그린 에너지를 통한 탄소 중립의 실현</span>
-                        </div>
+                            지금 지원하기
+                        </button>
+                        <button
+                            class="bg-white/5 backdrop-blur-lg border border-white/10 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-white/10 transition"
+                        >
+                            비전 영상 보기
+                        </button>
                     </div>
                 </div>
 
-                <div class="relative group cursor-pointer animate__animated animate__fadeInRight">
+                <div class="absolute bottom-10 animate-bounce text-gray-500">
+                    <span class="text-[10px] tracking-widest uppercase">Scroll Down</span>
                     <div
-                        class="absolute -inset-1 bg-gradient-to-r from-[#F37321] to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+                        class="w-[1px] h-12 bg-gradient-to-b from-gray-500 to-transparent mx-auto mt-2"
                     ></div>
+                </div>
+            </section>
+
+            <section class="py-32 px-6 max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+                    <div class="animate__animated animate__fadeInLeft">
+                        <h2 class="text-4xl font-bold mb-8 leading-snug">
+                            지구에서 우주까지,<br />
+                            한화의 영역은 무한합니다.
+                        </h2>
+                        <p class="text-gray-400 mb-10 leading-loose">
+                            우리는 인류의 지속 가능한 미래를 위해 고민합니다. <br />
+                            한화는 당신의 상상이 기술이 되고, 기술이 희망이 되는 곳입니다.
+                        </p>
+                        <div class="space-y-6">
+                            <div
+                                class="flex items-center gap-6 border-l-2 border-[#F37321] pl-6 py-2"
+                            >
+                                <span class="text-2xl font-bold">01</span>
+                                <span class="text-gray-300"
+                                    >누리호의 심장을 만드는 독보적 기술력</span
+                                >
+                            </div>
+                            <div
+                                class="flex items-center gap-6 border-l-2 border-gray-700 pl-6 py-2 hover:border-[#F37321] transition"
+                            >
+                                <span class="text-2xl font-bold">02</span>
+                                <span class="text-gray-300"
+                                    >그린 에너지를 통한 탄소 중립의 실현</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
                     <div
-                        class="relative bg-[#0d1117] border border-white/10 rounded-3xl overflow-hidden p-2"
+                        class="relative group cursor-pointer animate__animated animate__fadeInRight"
                     >
-                        <img
-                            src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=1000"
-                            alt="Tech"
-                            class="rounded-2xl opacity-70 group-hover:scale-105 transition duration-500"
-                        />
-                        <div class="p-8">
-                            <h4 class="text-xl font-bold mb-2">Aerospace & Defense</h4>
-                            <p class="text-sm text-gray-500">
-                                함께 우주 시대를 열어갈 엔지니어를 찾습니다.
+                        <div
+                            class="absolute -inset-1 bg-gradient-to-r from-[#F37321] to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+                        ></div>
+                        <div
+                            class="relative bg-[#0d1117] border border-white/10 rounded-3xl overflow-hidden p-2"
+                        >
+                            <img
+                                src="https://images.unsplash.com/photo-1517976487492-5750f3195933?auto=format&fit=crop&q=80&w=1000"
+                                alt="Tech"
+                                class="rounded-2xl opacity-70 group-hover:scale-105 transition duration-500"
+                            />
+                            <div class="p-8">
+                                <h4 class="text-xl font-bold mb-2">Aerospace & Defense</h4>
+                                <p class="text-sm text-gray-500">
+                                    함께 우주 시대를 열어갈 엔지니어를 찾습니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- <section class="py-24 px-6 max-w-7xl mx-auto bg-[#05070a] text-white" id="techSection">
+                <div class="mb-20 space-y-4">
+                    <h3
+                        class="text-[#F37321] font-bold tracking-widest text-sm uppercase animate-pulse"
+                    >
+                        Engineering Excellence
+                    </h3>
+                    <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                        보이지 않는 곳에서<br />미래를 설계하는 기술
+                    </h2>
+                    <p class="text-gray-400 max-w-2xl text-lg">
+                        누리호의 엔진 제어 알고리즘부터 친환경 에너지 그리드까지, <br />
+                        한화의 엔지니어들이 매일 마주하는 도전 과제들입니다.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div
+                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-orange-500/10 text-[#F37321] rounded-xl flex items-center justify-center mb-6 font-bold border border-[#F37321]/20"
+                            >
+                                01
+                            </div>
+                            <h4 class="text-2xl font-bold mb-4 text-white">Aerospace & Control</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                실시간 OS(RTOS) 기반의 비행 제어 시스템 개발. <br />
+                                C/C++ 및 임베디드 아키텍처를 통해 우주로 향하는 길을 제어합니다.
                             </p>
                         </div>
+                        <div class="mt-8">
+                            <div
+                                class="line-draw mb-4 bg-[#F37321] h-[2px] w-0 transition-all duration-500"
+                            ></div>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >RTOS</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >C++</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >Simulink</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-blue-500/20"
+                            >
+                                02
+                            </div>
+                            <h4 class="text-2xl font-bold mb-4 text-white">AI & Intelligence</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                방대한 위성 데이터의 AI 분석 및 딥러닝 모델링. <br />
+                                지구의 변화를 예측하고 더 안전한 내일을 위한 지능형 솔루션을
+                                구축합니다.
+                            </p>
+                        </div>
+                        <div class="mt-8">
+                            <div
+                                class="line-draw mb-4 bg-blue-400 h-[2px] w-0 transition-all duration-500"
+                            ></div>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >PyTorch</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >Python</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >Big Data</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
+                    >
+                        <div>
+                            <div
+                                class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-green-500/20"
+                            >
+                                03
+                            </div>
+                            <h4 class="text-2xl font-bold mb-4 text-white">Sustainable Tech</h4>
+                            <p class="text-gray-400 text-sm leading-relaxed">
+                                지능형 에너지 관리 시스템(EMS) 및 분산 전원 제어. <br />
+                                신재생 에너지의 효율을 극대화하는 스마트 그리드 기술을 선도합니다.
+                            </p>
+                        </div>
+                        <div class="mt-8">
+                            <div
+                                class="line-draw mb-4 bg-green-400 h-[2px] w-0 transition-all duration-500"
+                            ></div>
+                            <div class="flex gap-2">
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >Java/Spring</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >IoT</span
+                                >
+                                <span
+                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
+                                    >Cloud</span
+                                >
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
+
+                <div
+                    class="mt-20 p-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] text-white flex flex-col md:flex-row justify-between items-center overflow-hidden relative border border-white/10"
+                >
+                    <div class="z-10 text-center md:text-left">
+                        <h4 class="text-2xl font-bold mb-2">한화 엔지니어링 리포트</h4>
+                        <p class="text-gray-400 font-light">
+                            우리가 겪은 기술적 난제와 해결 과정을 공유합니다.
+                        </p>
+                    </div>
+                    <button
+                        class="z-10 mt-8 md:mt-0 bg-[#F37321] px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_rgba(243,115,33,0.5)] transition-all"
+                    >
+                        기술 블로그 바로가기
+                    </button>
+                </div>
+            </section> -->
+
+            <section class="py-24 px-6 max-w-7xl mx-auto bg-[#05070a] text-white" id="techSection">
+                <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
+                    <div class="space-y-4">
+                        <h3 class="text-[#F37321] font-bold tracking-widest text-sm uppercase ml-">
+                            Now Recruiting
+                        </h3>
+                        <h2 class="text-4xl md:text-5xl font-black leading-tight">
+                            당신의 기술이<br />미래의 기준이 됩니다
+                        </h2>
+                        <p class="text-gray-400 max-w-2xl text-lg">
+                            인류의 삶을 바꾸는 거대한 시스템을 함께 설계할 동료를 찾습니다.
+                        </p>
+                    </div>
+                    <a
+                        href="/all-jobs"
+                        class="group flex items-center gap-2 text-gray-400 hover:text-[#F37321] transition-colors pb-2 border-b border-gray-800 hover:border-[#F37321]"
+                    >
+                        <span>전체 채용공고 더보기</span>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"
+                            />
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a
+                        href="/jobs/aerospace"
+                        class="tech-card group p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:border-[#F37321]/50 transition-all duration-500 relative overflow-hidden"
+                    >
+                        <div class="z-10">
+                            <div class="flex justify-between items-start mb-6">
+                                <span
+                                    class="text-xs font-bold text-[#F37321] bg-[#F37321]/10 px-3 py-1 rounded-full uppercase"
+                                    >D-14</span
+                                >
+                                <!-- <span
+                                    class="text-gray-600 group-hover:text-[#F37321] transition-colors italic"
+                                    >01</span
+                                > -->
+                            </div>
+                            <h4
+                                class="text-2xl font-bold mb-4 text-white group-hover:text-[#F37321] transition-colors"
+                            >
+                                유도탄 체계 제어<br />S/W 엔지니어
+                            </h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                누리호 엔진 제어 알고리즘 및 실시간 운영체제(RTOS) 최적화 로직을
+                                설계합니다.
+                            </p>
+                        </div>
+                        <div class="z-10 mt-8">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >C/C++</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >Embedded</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >RTOS</span
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#F37321]/5 rounded-full blur-3xl group-hover:bg-[#F37321]/20 transition-all duration-700"
+                        ></div>
+                    </a>
+
+                    <a
+                        href="/jobs/ai"
+                        class="tech-card group p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:border-blue-500/50 transition-all duration-500 relative overflow-hidden"
+                    >
+                        <div class="z-10">
+                            <div class="flex justify-between items-start mb-6">
+                                <span
+                                    class="text-xs font-bold text-blue-400 bg-blue-400/10 px-3 py-1 rounded-full uppercase"
+                                    >상시채용</span
+                                >
+                                <!-- <span
+                                    class="text-gray-600 group-hover:text-blue-400 transition-colors italic"
+                                    >02</span
+                                > -->
+                            </div>
+                            <h4
+                                class="text-2xl font-bold mb-4 text-white group-hover:text-blue-400 transition-colors"
+                            >
+                                위성 영상 분석<br />AI 모델러
+                            </h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                SAR 위성 데이터를 활용한 지형 변화 감지 및 객체 인식 딥러닝 모델을
+                                구축합니다.
+                            </p>
+                        </div>
+                        <div class="z-10 mt-8">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >PyTorch</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >Python</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >CV</span
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-blue-500/5 rounded-full blur-3xl group-hover:bg-blue-500/20 transition-all duration-700"
+                        ></div>
+                    </a>
+
+                    <a
+                        href="/jobs/energy"
+                        class="tech-card group p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:border-green-500/50 transition-all duration-500 relative overflow-hidden"
+                    >
+                        <div class="z-10">
+                            <div class="flex justify-between items-start mb-6">
+                                <span
+                                    class="text-xs font-bold text-green-400 bg-green-400/10 px-3 py-1 rounded-full uppercase"
+                                    >NEW</span
+                                >
+                                <!-- <span
+                                    class="text-gray-600 group-hover:text-green-400 transition-colors italic"
+                                    >03</span
+                                > -->
+                            </div>
+                            <h4
+                                class="text-2xl font-bold mb-4 text-white group-hover:text-green-400 transition-colors"
+                            >
+                                에너지 그리드<br />Back-end 개발자
+                            </h4>
+                            <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                                글로벌 분산 전원의 효율적 관리를 위한 고가용성 마이크로서비스
+                                아키텍처를 개발합니다.
+                            </p>
+                        </div>
+                        <div class="z-10 mt-8">
+                            <div class="flex flex-wrap gap-2">
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >Java</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >Spring Boot</span
+                                >
+                                <span
+                                    class="text-[10px] bg-white/5 border border-white/10 px-2 py-1 rounded-md text-gray-400"
+                                    >AWS</span
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="absolute -right-10 -bottom-10 w-40 h-40 bg-green-500/5 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all duration-700"
+                        ></div>
+                    </a>
+                </div>
+            </section>
+            <section
+                class="min-h-screen flex flex-col items-center justify-center px-6 relative"
+                id="finalSection"
+            >
+                <div class="absolute inset-0 flex items-center justify-center opacity-20">
+                    <div
+                        class="w-[600px] h-[600px] border border-dashed border-white rounded-full animate-[spin_60s_linear_infinite]"
+                    ></div>
+                    <div
+                        class="absolute w-[800px] h-[800px] border border-dashed border-white/5 rounded-full animate-[spin_100s_linear_infinite_reverse]"
+                    ></div>
+                </div>
+
+                <div class="z-10 text-center max-w-4xl">
+                    <h2 class="text-3xl md:text-5xl font-black mb-12 leading-tight">
+                        우리의 웅장한 서사에는<br />
+                        <span class="text-[#F37321]">아직 당신의 이름이 없습니다.</span>
+                    </h2>
+
+                    <div class="mb-16">
+                        <div
+                            class="flex flex-col md:flex-row items-center justify-center gap-4 text-2xl md:text-4xl font-bold"
+                        >
+                            <input
+                                type="text"
+                                id="userName"
+                                placeholder="홍길동"
+                                class="name-input text-center w-64 py-2 font-black text-[#F37321] placeholder:text-gray-800"
+                            />
+                            <span>님, 한화와 함께하시겠습니까?</span>
+                        </div>
+                        <p class="text-gray-500 mt-6 text-sm md:text-base">
+                            입력하신 이름은 한화의 미래 여정에 함께 매핑됩니다.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row gap-6 justify-center">
+                        <button
+                            onclick="startMission()"
+                            class="btn-mission px-12 py-6 rounded-full text-xl font-black tracking-widest"
+                        >
+                            MISSION START
+                        </button>
+                        <button
+                            class="bg-white/5 border border-white/10 px-12 py-6 rounded-full text-xl font-black hover:bg-white/10 transition"
+                        >
+                            전체 공고 보기
+                        </button>
+                    </div>
+                </div>
+
+                <footer
+                    class="absolute bottom-10 w-full px-10 flex flex-col md:flex-row justify-between text-[10px] text-gray-600 tracking-widest uppercase"
+                >
+                    <div>© 2024 HANWHA GROUP. ALL RIGHTS RESERVED.</div>
+                    <div class="flex gap-6 mt-4 md:mt-0">
+                        <a href="#" class="hover:text-white">Privacy Policy</a>
+                        <a href="#" class="hover:text-white">Contact Us</a>
+                        <a href="#" class="hover:text-white">Hanwha.com</a>
+                    </div>
+                </footer>
+            </section>
+
+            <script>
+                function startMission() {
+                    const name = document.getElementById('userName').value;
+                    if (!name) {
+                        alert('개척자의 이름을 먼저 알려주세요.');
+                        return;
+                    }
+
+                    // 시각적 피드백: 버튼 클릭 시 로켓 발사 소리나 화면 흔들림 효과 연출 가능
+                    gsap.to('#finalSection', {
+                        backgroundColor: '#F37321',
+                        duration: 0.5,
+                        onComplete: () => {
+                            alert(
+                                `${name}님, 한화의 미래에 탑승하신 것을 환영합니다! 공고 페이지로 이동합니다.`
+                            );
+                            // window.location.href = "/jobs"; // 실제 경로 이동
+                        },
+                    });
+                }
+
+                // 등장 애니메이션
+                gsap.from('h2', { y: 30, opacity: 0, duration: 1, delay: 0.5 });
+                gsap.from('.name-input', { width: 0, duration: 1, delay: 1 });
+            </script>
+        </div>
     </body>
 </html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hanwha - The Ignition</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@900&display=swap');
+            body {
+                background-color: #000;
+                overflow-x: hidden;
+                font-family: 'Pretendard', sans-serif;
+            }
+
+            .hero-container {
+                height: 300vh;
+                position: relative;
+            } /* 스크롤 길이를 위해 300vh 설정 */
+
+            .sticky-wrapper {
+                position: sticky;
+                top: 0;
+                height: 100vh;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .video-bg {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: brightness(0.3) scale(1.1);
+                transition: filter 0.2s;
+            }
+
+            .overlay-text {
+                position: relative;
+                z-index: 10;
+                text-align: center;
+                color: white;
+                text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            }
+
+            .altitude-gauge {
+                position: fixed;
+                right: 40px;
+                top: 50%;
+                transform: translateY(-50%);
+                height: 200px;
+                width: 2px;
+                background: rgba(255, 255, 255, 0.2);
+                z-index: 100;
+            }
+            .gauge-bar {
+                width: 100%;
+                background: #f37321;
+                height: 0%;
+                box-shadow: 0 0 10px #f37321;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="hero-container">
+            <div class="sticky-wrapper">
+                <video class="video-bg" id="heroVideo" autoplay muted loop playsinline>
+                    <source
+                        src="https://assets.mixkit.co/videos/preview/mixkit-space-rocket-taking-off-3408-large.mp4"
+                        type="video/mp4"
+                    />
+                </video>
+
+                <div class="overlay-text">
+                    <p
+                        id="subText"
+                        class="text-orange-500 tracking-[0.6em] text-sm md:text-lg mb-4 font-bold opacity-0"
+                    >
+                        STATION READY
+                    </p>
+                    <h1 id="mainTitle" class="text-6xl md:text-9xl font-black leading-tight">
+                        지상에서<br /><span class="text-white">우주까지</span>
+                    </h1>
+                    <p
+                        id="descText"
+                        class="mt-8 text-gray-400 text-lg md:text-xl font-light opacity-0"
+                    >
+                        당신의 기술이 인류의 새로운 영토가 됩니다.
+                    </p>
+                </div>
+
+                <div class="altitude-gauge hidden md:block">
+                    <div class="gauge-bar" id="gaugeBar"></div>
+                    <div class="absolute -left-12 top-0 text-[10px] text-white/50 tracking-tighter">
+                        ALT 100km
+                    </div>
+                    <div
+                        id="altValue"
+                        class="absolute -left-12 bottom-0 text-[10px] text-[#F37321] font-bold"
+                    >
+                        0km
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="h-screen bg-white flex items-center justify-center text-black">
+            <h2 class="text-4xl font-bold">2단계: 기술의 심장으로 진입합니다.</h2>
+        </section>
+
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 1. 초기 텍스트 등장 애니메이션
+            gsap.to('#subText', { opacity: 1, y: -20, duration: 1, delay: 0.5 });
+            gsap.to('#descText', { opacity: 1, y: 0, duration: 1, delay: 0.8 });
+
+            // 2. 스크롤 연동 시네마틱 애니메이션 (Timeline)
+            const tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.hero-container',
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: 1, // 스크롤 속도에 맞춰 애니메이션 동기화
+                },
+            });
+
+            tl.to('.video-bg', { filter: 'brightness(1.2) scale(1.3)', duration: 2 }) // 영상 밝아지며 확대 (점화 효과)
+                .to('#mainTitle', { scale: 0.8, opacity: 0, y: -100, duration: 1.5 }, '<') // 메인 타이틀 사라짐
+                .to(
+                    '#subText',
+                    { textContent: 'IGNITION SUCCESS', color: '#FFD700', duration: 0.5 },
+                    '-=1'
+                ) // 텍스트 변경
+                .to('.sticky-wrapper', { backgroundColor: '#F37321', opacity: 0, duration: 1 }); // 오렌지 빛으로 화면 전환(페이드 아웃)
+
+            // 3. 고도계 로직
+            ScrollTrigger.create({
+                trigger: '.hero-container',
+                start: 'top top',
+                end: 'bottom bottom',
+                onUpdate: (self) => {
+                    const progress = Math.round(self.progress * 100);
+                    document.getElementById('gaugeBar').style.height = progress + '%';
+                    document.getElementById('altValue').innerText = progress + 'km';
+                },
+            });
+        </script>
+    </body>
+</html>

@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@100;300;400;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@900&display=swap');
+/* 상단메인 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    overflow-x: hidden;
+}
+
+.inner {
+    background: #05070a;
+}
+
+.font-black {
+    font-weight: 900;
+}
+
+/* 웅장한 배경: 우주와 지평선을 상징하는 그래디언트 */
+.cinematic-hero {
+    background: linear-gradient(to bottom, rgba(5, 7, 10, 0.4), #05070a),
+        url('https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&q=80&w=2000');
+    background-size: cover;
+    background-position: center;
+}
+
+/* 한화 오렌지 빛 (Glow) 효과 */
+.orange-glow {
+    box-shadow: 0 0 30px rgba(243, 115, 33, 0.3);
+    transition: all 0.5s ease;
+}
+.orange-glow:hover {
+    box-shadow: 0 0 50px rgba(243, 115, 33, 0.6);
+    transform: translateY(-5px);
+}
+
+/* 텍스트 그래디언트 */
+.text-hope {
+    background: linear-gradient(120deg, #ffffff 30%, #f37321 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-container {
+    height: 300vh;
+    position: relative;
+} /* 스크롤 길이를 위해 300vh 설정 */
+
+.sticky-wrapper {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.3) scale(1.1);
+    transition: filter 0.2s;
+}
+
+.overlay-text {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.altitude-gauge {
+    position: fixed;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 200px;
+    width: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    z-index: 100;
+}
+.gauge-bar {
+    width: 100%;
+    background: #f37321;
+    height: 0%;
+    box-shadow: 0 0 10px #f37321;
+}
+
+/* 두번째 */
+/* body {
+    font-family: 'Pretendard', sans-serif;
+    background-color: #f8f9fa;
+    color: #1a1a1a;
+} */
+
+/* 유리 질감 카드 효과 */
+.tech-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity;
+    backface-visibility: hidden; /* 미세한 떨림 방지 */
+}
+.tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(243, 115, 33, 0.1);
+    border-color: #f37321;
+}
+
+/* 텍스트 애니메이션용 라인 */
+.line-draw {
+    width: 0;
+    height: 2px;
+    background: #f37321;
+    transition: width 0.6s ease;
+}
+.tech-card:hover .line-draw {
+    width: 100%;
+}
+
+/* 텍스트 입력창 애니메이션 */
+.name-input {
+    background: transparent;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    transition: border-color 0.4s;
+}
+.name-input:focus {
+    border-color: #f37321;
+    outline: none;
+}
+
+/* 최종 버튼 글로우 효과 */
+.btn-mission {
+    background: #f37321;
+    box-shadow: 0 0 20px rgba(243, 115, 33, 0.4);
+    transition: all 0.3s;
+}
+.btn-mission:hover {
+    box-shadow: 0 0 40px rgba(243, 115, 33, 0.7);
+    transform: scale(1.05);
+}

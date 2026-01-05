@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@300;600;800&display=swap');
+            body {
+                font-family: 'Pretendard', sans-serif;
+                background-color: #fff;
+            }
+
+            /* 인물 사진 필터 효과 */
+            .interview-image {
+                filter: grayscale(100%);
+                transition: all 0.6s ease;
+            }
+            .interview-card:hover .interview-image {
+                filter: grayscale(0%);
+                transform: scale(1.05);
+            }
+
+            /* 큰 따옴표 장식 */
+            .quote-mark {
+                font-family: serif;
+                line-height: 1;
+                opacity: 0.1;
+            }
+        </style>
+    </head>
+    <body class="bg-[#FAF9F6]">
+        <section class="py-32 px-6 max-w-7xl mx-auto" id="peopleSection">
+            <div class="text-center mb-24">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-6 tracking-tight">
+                    우리는 함께 역사를 씁니다
+                </h2>
+                <p class="text-gray-500 text-lg font-light">
+                    숫자와 기술 뒤에 숨겨진, 진짜 개척자들의 이야기
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+                <div class="interview-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-[2rem] mb-8 aspect-[4/5]">
+                        <img
+                            src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                            class="interview-image w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10"
+                        >
+                            <span class="text-[#F37321] font-bold mb-2">Vlog 보러가기 →</span>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="quote-mark absolute -top-10 -left-6 text-8xl text-orange-600 font-serif"
+                            >“</span
+                        >
+                        <h3 class="text-2xl md:text-3xl font-bold leading-tight mb-4">
+                            내가 짠 코드가 실제 궤도에 올랐을 때,<br />
+                            그 전율은 어떤 말로도 설명이 안 돼요.
+                        </h3>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                            한화에어로스페이스 임베디드 제어팀 김한화 선임연구원
+                        </p>
+                        <div class="flex gap-4">
+                            <span
+                                class="text-xs bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm"
+                                >#누리호_제어</span
+                            >
+                            <span
+                                class="text-xs bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm"
+                                >#5년차의_성장</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <div class="interview-card group cursor-pointer md:mt-24">
+                    <div class="relative overflow-hidden rounded-[2rem] mb-8 aspect-[4/5]">
+                        <img
+                            src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800"
+                            class="interview-image w-full h-full object-cover"
+                        />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-10"
+                        >
+                            <span class="text-[#F37321] font-bold mb-2">Vlog 보러가기 →</span>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <span
+                            class="quote-mark absolute -top-10 -left-6 text-8xl text-orange-600 font-serif"
+                            >“</span
+                        >
+                        <h3 class="text-2xl md:text-3xl font-bold leading-tight mb-4">
+                            실패를 두려워하지 않는 문화가<br />
+                            결국 세계 최고의 태양광 기술을 만들었죠.
+                        </h3>
+                        <p class="text-gray-600 mb-6 font-light leading-relaxed">
+                            한화솔루션 미래에너지연구소 이내일 수석연구원
+                        </p>
+                        <div class="flex gap-4">
+                            <span
+                                class="text-xs bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm"
+                                >#실패가_자산</span
+                            >
+                            <span
+                                class="text-xs bg-white px-4 py-2 rounded-full border border-gray-100 shadow-sm"
+                                >#그린_에너지</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-32 text-center border-t border-gray-200 pt-20">
+                <p class="text-sm font-bold text-[#F37321] tracking-widest mb-4">
+                    GROWTH & CULTURE
+                </p>
+                <h4 class="text-3xl font-bold mb-10">당신의 성장이 한화의 내일이 됩니다</h4>
+                <div
+                    class="flex justify-center gap-20 opacity-40 grayscale hover:grayscale-0 transition duration-500"
+                >
+                    <div class="text-center">
+                        <p class="font-bold text-2xl">3,400+</p>
+                        <p class="text-xs">특허 출원</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-2xl">₩2.1T</p>
+                        <p class="text-xs">R&D 투자</p>
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-2xl">45개국</p>
+                        <p class="text-xs">글로벌 거점</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            gsap.registerPlugin(ScrollTrigger);
+
+            // 인터뷰 카드 지그재그 등장 애니메이션
+            gsap.from('.interview-card', {
+                scrollTrigger: {
+                    trigger: '#peopleSection',
+                    start: 'top 60%',
+                },
+                y: 100,
+                opacity: 0,
+                duration: 1,
+                stagger: 0.3,
+                ease: 'power3.out',
+            });
+        </script>
+    </body>
+</html>
