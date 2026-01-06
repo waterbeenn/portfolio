@@ -14,20 +14,25 @@
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </head>
     <body class="text-white">
+        <div id="particles-js"></div>
         <div class="inner">
             <nav
                 class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center backdrop-blur-sm border-b border-white/10"
             >
-                <div class="text-2xl font-black tracking-tighter text-[#F37321]">
+                <!-- <div class="text-2xl font-black tracking-tighter text-[#F37321]">
                     HANWHA<span class="text-white font-light">IN</span>
+                </div> -->
+                <div class="tracking-tighter w-40">
+                    <a href="index.html"><img src="/assets/hanwha_logo_white.png" alt="한화 로고"></a>
                 </div>
-                <div class="hidden md:flex gap-10 text-sm font-light tracking-widest uppercase">
-                    <a href="#" class="hover:text-[#F37321] transition">Careers</a>
-                    <a href="#" class="hover:text-[#F37321] transition">Our Tech</a>
-                    <a href="#" class="hover:text-[#F37321] transition">Culture</a>
-                    <a href="#" class="hover:text-[#F37321] transition">Apply</a>
+                <div class="hidden md:flex gap-20 text-sm font-light tracking-widest uppercase mr-10">
+                    <a href="#" class="hover:text-[#F37321] transition font-medium">Careers</a>
+                    <a href="#" class="hover:text-[#F37321] transition font-medium">Our Tech</a>
+                    <a href="#" class="hover:text-[#F37321] transition font-medium">Culture</a>
+                    <a href="#" class="hover:text-[#F37321] transition font-medium">Apply</a>
                 </div>
                 <button
                     class="border border-white/30 px-6 py-2 rounded-full text-xs hover:bg-white hover:text-black transition"
@@ -134,154 +139,13 @@
                     </div>
                 </div>
             </section>
-            <!-- <section class="py-24 px-6 max-w-7xl mx-auto bg-[#05070a] text-white" id="techSection">
-                <div class="mb-20 space-y-4">
-                    <h3
-                        class="text-[#F37321] font-bold tracking-widest text-sm uppercase animate-pulse"
-                    >
-                        Engineering Excellence
-                    </h3>
-                    <h2 class="text-4xl md:text-5xl font-black leading-tight">
-                        보이지 않는 곳에서<br />미래를 설계하는 기술
-                    </h2>
-                    <p class="text-gray-400 max-w-2xl text-lg">
-                        누리호의 엔진 제어 알고리즘부터 친환경 에너지 그리드까지, <br />
-                        한화의 엔지니어들이 매일 마주하는 도전 과제들입니다.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div
-                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                    >
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-orange-500/10 text-[#F37321] rounded-xl flex items-center justify-center mb-6 font-bold border border-[#F37321]/20"
-                            >
-                                01
-                            </div>
-                            <h4 class="text-2xl font-bold mb-4 text-white">Aerospace & Control</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                실시간 OS(RTOS) 기반의 비행 제어 시스템 개발. <br />
-                                C/C++ 및 임베디드 아키텍처를 통해 우주로 향하는 길을 제어합니다.
-                            </p>
-                        </div>
-                        <div class="mt-8">
-                            <div
-                                class="line-draw mb-4 bg-[#F37321] h-[2px] w-0 transition-all duration-500"
-                            ></div>
-                            <div class="flex gap-2">
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >RTOS</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >C++</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >Simulink</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                    >
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-blue-500/10 text-blue-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-blue-500/20"
-                            >
-                                02
-                            </div>
-                            <h4 class="text-2xl font-bold mb-4 text-white">AI & Intelligence</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                방대한 위성 데이터의 AI 분석 및 딥러닝 모델링. <br />
-                                지구의 변화를 예측하고 더 안전한 내일을 위한 지능형 솔루션을
-                                구축합니다.
-                            </p>
-                        </div>
-                        <div class="mt-8">
-                            <div
-                                class="line-draw mb-4 bg-blue-400 h-[2px] w-0 transition-all duration-500"
-                            ></div>
-                            <div class="flex gap-2">
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >PyTorch</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >Python</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >Big Data</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-
-                    <div
-                        class="tech-card p-10 rounded-3xl flex flex-col justify-between h-[400px] bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300"
-                    >
-                        <div>
-                            <div
-                                class="w-12 h-12 bg-green-500/10 text-green-400 rounded-xl flex items-center justify-center mb-6 font-bold border border-green-500/20"
-                            >
-                                03
-                            </div>
-                            <h4 class="text-2xl font-bold mb-4 text-white">Sustainable Tech</h4>
-                            <p class="text-gray-400 text-sm leading-relaxed">
-                                지능형 에너지 관리 시스템(EMS) 및 분산 전원 제어. <br />
-                                신재생 에너지의 효율을 극대화하는 스마트 그리드 기술을 선도합니다.
-                            </p>
-                        </div>
-                        <div class="mt-8">
-                            <div
-                                class="line-draw mb-4 bg-green-400 h-[2px] w-0 transition-all duration-500"
-                            ></div>
-                            <div class="flex gap-2">
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >Java/Spring</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >IoT</span
-                                >
-                                <span
-                                    class="text-[10px] border border-white/10 bg-white/5 px-2 py-1 rounded-full text-gray-300"
-                                    >Cloud</span
-                                >
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="mt-20 p-12 bg-gradient-to-br from-gray-800 to-gray-900 rounded-[40px] text-white flex flex-col md:flex-row justify-between items-center overflow-hidden relative border border-white/10"
-                >
-                    <div class="z-10 text-center md:text-left">
-                        <h4 class="text-2xl font-bold mb-2">한화 엔지니어링 리포트</h4>
-                        <p class="text-gray-400 font-light">
-                            우리가 겪은 기술적 난제와 해결 과정을 공유합니다.
-                        </p>
-                    </div>
-                    <button
-                        class="z-10 mt-8 md:mt-0 bg-[#F37321] px-8 py-4 rounded-full font-bold hover:shadow-[0_0_20px_rgba(243,115,33,0.5)] transition-all"
-                    >
-                        기술 블로그 바로가기
-                    </button>
-                </div>
-            </section> -->
-
-            <section class="py-24 px-6 max-w-7xl mx-auto bg-[#05070a] text-white" id="techSection">
+            <section
+                class="py-24 px-6 max-w-7xl mx-auto bg-transparent text-white"
+                id="techSection"
+            >
                 <div class="mb-10 flex flex-col md:flex-row justify-between items-end gap-6">
                     <div class="space-y-4">
-                        <h3 class="text-[#F37321] font-bold tracking-widest text-sm uppercase ml-">
+                        <h3 class="text-[#F37321] font-bold tracking-widest text-sm uppercase ml-1">
                             Now Recruiting
                         </h3>
                         <h2 class="text-4xl md:text-5xl font-black leading-tight">
@@ -517,6 +381,94 @@
             </section>
 
             <script>
+                // Particles.js 초기화 스크립트 (DOMContentLoaded 안에 넣어 모든 스크립트가 로드된 후 실행되도록 함)
+                window.addEventListener('DOMContentLoaded', () => {
+                    particlesJS('particles-js', {
+                        particles: {
+                            number: { value: 150, density: { enable: true, value_area: 800 } }, // 별 개수, 밀도
+                            color: { value: '#ffffff' }, // 별 색상
+                            shape: { type: 'circle' }, // 별 모양 (circle, edge, triangle, polygon, star, image)
+                            opacity: { value: 0.65, random: true, anim: { enable: false } }, // 별 투명도
+                            size: { value: 1.5, random: true, anim: { enable: false } }, // 별 크기
+                            line_linked: {
+                                enable: true, // 별 사이 선 연결
+                                distance: 150, // 선 연결 거리
+                                color: '#ffffff', // 선 색상
+                                opacity: 0, // 선 투명도
+                                width: 1,
+                            },
+                            move: {
+                                enable: true, // 움직임 활성화
+                                speed: 1, // 움직임 속도
+                                direction: 'none', // 움직임 방향 (none, top, top-right, right, bottom-right, bottom, bottom-left, left, top-left)
+                                random: true, // 무작위 방향
+                                straight: false,
+                                out_mode: 'out', // 캔버스 밖으로 나가면 (out, bounce)
+                                bounce: false,
+                                attract: { enable: false, rotateX: 600, rotateY: 1200 },
+                            },
+                        },
+                        interactivity: {
+                            detect_on: 'canvas',
+                            events: {
+                                onhover: { enable: true, mode: 'grab' }, // 마우스 오버 시 (grab, repulse, bubble)
+                                onclick: { enable: true, mode: 'push' }, // 클릭 시 (push, remove, bubble, repulse)
+                                resize: true,
+                            },
+                            modes: {
+                                grab: { distance: 180, line_linked: { opacity: 0.8 } }, // grab 모드 시 선 연결 거리/투명도
+                                bubble: {
+                                    distance: 400,
+                                    size: 40,
+                                    duration: 2,
+                                    opacity: 8,
+                                    speed: 3,
+                                },
+                                repulse: { distance: 200, duration: 0.4 },
+                                push: { particles_nb: 4 }, // 클릭 시 생성되는 별 개수
+                                remove: { particles_nb: 2 },
+                            },
+                        },
+                        retina_detect: true,
+                    });
+
+                    // GSAP ScrollTrigger 등록
+                    gsap.registerPlugin(ScrollTrigger);
+
+                    // tech-card 애니메이션
+                    gsap.fromTo('.tech-card', {
+                        scrollTrigger: {
+                            trigger: '#techSection',
+                            start: 'top 80%',
+                        },
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.8,
+                        stagger: 0.1, // 하나씩 나타나게
+                        ease: 'power3.out',
+                    });
+
+                    gsap.from('#finalSection h2', {
+                        scrollTrigger: {
+                            trigger: '#finalSection',
+                            start: 'top 80%',
+                        },
+                        y: 30,
+                        opacity: 0,
+                        duration: 1,
+                    });
+                    gsap.from('#finalSection .name-input', {
+                        scrollTrigger: {
+                            trigger: '#finalSection',
+                            start: 'top 80%',
+                        },
+                        width: 0,
+                        opacity: 0,
+                        duration: 1,
+                        delay: 0.5,
+                    });
+                });
+
                 function startMission() {
                     const name = document.getElementById('userName').value;
                     if (!name) {
